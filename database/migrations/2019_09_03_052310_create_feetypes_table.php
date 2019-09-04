@@ -14,7 +14,8 @@ class CreateFeetypesTable extends Migration
     public function up()
     {
         Schema::create('feetypes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('fee_type',100);
             $table->timestamps();
         });
     }

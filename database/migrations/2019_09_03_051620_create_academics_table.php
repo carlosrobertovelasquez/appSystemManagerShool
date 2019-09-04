@@ -14,7 +14,9 @@ class CreateAcademicsTable extends Migration
     public function up()
     {
         Schema::create('academics', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('academic',50);
+            $table->string('description',100);
             $table->timestamps();
         });
     }

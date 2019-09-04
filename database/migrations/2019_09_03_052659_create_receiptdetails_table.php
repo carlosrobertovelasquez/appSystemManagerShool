@@ -14,7 +14,9 @@ class CreateReceiptdetailsTable extends Migration
     public function up()
     {
         Schema::create('receiptdetails', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->integer('receipt_id');
+            $table->integer('student_id');
+            $table->integer('transact_id');
             $table->timestamps();
         });
     }

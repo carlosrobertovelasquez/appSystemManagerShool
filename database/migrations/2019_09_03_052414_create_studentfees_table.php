@@ -14,7 +14,14 @@ class CreateStudentfeesTable extends Migration
     public function up()
     {
         Schema::create('studentfees', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->integer('fee_id')->unsigned();
+           $table->foreign('fee_id')->references('id')->on('fees');
+            $table->integer('stundent_id')->unsigned();
+            $table->foreign('stundent_id')->references('id')->on('stundents');
+            $table->integer('level_id')->unsigned();
+            $table->foreign('level_id')->references('id')->on('levels');
+            $table->float('amount');
             $table->timestamps();
         });
     }
